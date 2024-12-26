@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.phone-frame {
+    position: relative; /* Устанавливаем относительное позиционирование для рамки */
+    width: 375px; /* Ширина смартфона */
+    height: 800px; /* Высота смартфона */
+    border: 16px solid #000; /* Рамка смартфона */
+    border-radius: 36px; /* Закругление углов */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Тень */
+    overflow: hidden; /* Скрыть переполнение */
+    display: flex; /* Центрирование содержимого */
+    flex-direction: column; /* Вертикальное расположение элементов */
+    padding: 20px; /* Отступы внутри рамки */
+}
+
+.container {
+    width: 100%;
+    text-align: left;
+}
+
+.back-arrow {
+    font-size: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 24px;
+    color: #000000;
+    margin: 0;
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+p {
+    color: #a0a0a0;
+    margin: 5px 0 20px 0;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d0d0d0;
+    margin-bottom: 20px; /* Отступ между полями ввода */
+}
+
+.input-group i {
+    color: #000000;
+    padding: 10px;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    flex: 1;
+    font-size: 16px;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #1a2e35;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    margin: 20px 0 0 auto; /* Убираем отступ справа */
+    margin-top: 150px;
+    margin-right: 10px; /* Устанавливаем небольшой отступ справа */
+}
+
+.new-member, .forgot-password, .already-member {
+    position: absolute; /* Устанавливаем абсолютное позиционирование */
+    left: 20px; /* Отступ слева */
+    color: #a0a0a0;
+    padding-left: 10px; /* Отступ слева для выравнивания */
+}
+
+.new-member {
+    bottom: 30px; /* Расположение надписи "New here?" */
+}
+
+.forgot-password {
+    color: #1a2e35;
+    text-decoration: underline;
+    display: block;
+    text-align: center; /* Центрирование текста */
+    margin: 10px 0; /* Отступы сверху и снизу */
+    margin-left: 100px;
+}
+
+.already-member {
+    bottom: 30px; /* Расположение надписи "Already a member?" */
+}

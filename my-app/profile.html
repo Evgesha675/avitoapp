@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Profile</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa; /* Фон страницы */
+        }
+        .phone-frame {
+            position: relative; /* Устанавливаем относительное позиционирование для рамки */
+            width: 375px; /* Ширина смартфона */
+            height: 667px; /* Высота смартфона */
+            border: 16px solid #000; /* Рамка смартфона */
+            border-radius: 36px; /* Закругление углов */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Тень */
+            overflow: hidden; /* Скрыть переполнение */
+        }
+        .container {
+            max-width: 400px;
+            margin: 0; /* Убираем отступы */
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .header i {
+            font-size: 24px;
+            color: #333;
+            cursor: pointer; /* Указатель для кликабельных элементов */
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .profile-info {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .profile-info .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .profile-info .info-item i {
+            font-size: 20px;
+            color: #333;
+            margin-right: 10px;
+        }
+        .profile-info .info-item span {
+            font-size: 16px;
+            color: #333;
+        }
+        .profile-info .info-item .label {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .products {
+            display: flex;
+            justify-content: space-between;
+        }
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 48%;
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-card .product-name {
+            font-size: 14px;
+            color: #333;
+            margin: 10px 0;
+        }
+        .product-card .product-price {
+            font-size: 16px;
+            color: #4a90e2;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .product-card .message-btn {
+            background-color: #4a90e ```html
+            2;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-frame"> <!-- Рамка смартфона -->
+        <div class="container">
+            <div class="header">
+                <i class="fas fa-arrow-left" onclick="window.history.back();"></i>
+                <h1>Profile</h1>
+            </div>
+            <div class="profile-info">
+                <div class="info-item">
+                    <i class="fas fa-user"></i>
+                    <span>
+                        <span class="label">Name</span>
+                        Ivan
+                    </span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>
+                        <span class="label">Phone number</span>
+                        +7 999 888 77 66
+                    </span>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-vk"></i>
+                    <span>
+                        <span class="label">VK.com</span>
+                        @askme
+                    </span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>
+                        <span class="label">Address</span>
+                        Irkutskaya oblast', Irkutsk, Dzerzhinskogo St
+                    </span>
+                </div>
+            </div>
+            <div class="products">
+                <div class="product-card">
+                    <img alt="Chuwi GemiBook как новый" height="100" src="https://storage.googleapis.com/a1aa/image/LwQtEcu7oh4eBiHEf7AUU1cxB15qSEc5REaT6YRJYeTG7f6PB.jpg" width="150"/>
+                    <div class="product-name">Chuwi GemiBook как новый</div>
+                    <div class="product-price">16 400 руб</div>
+                    <button class="message-btn">Message</button>
+                </div>
+                <div class="product-card">
+                    <img alt="Chuwi GemiBook как новый" height="100" src="https://storage.googleapis.com/a1aa/image/LwQtEcu7oh4eBiHEf7AUU1cxB15qSEc5REaT6YRJYeTG7f6PB.jpg" width="150"/>
+                    <div class="product-name">Chuwi GemiBook как новый</div>
+                    <div class="product-price">16 400 руб</div>
+                    <button class="message-btn">Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

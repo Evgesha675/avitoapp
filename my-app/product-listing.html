@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"> <!-- Подключение внешнего CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+     
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header .menu-icon, .header .user-icon {
+            font-size: 24px;
+            cursor: pointer; /* Указатель для кликабельных элементов */
+        }
+        .header .sign-in {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .search-bar input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+        }
+        .search-bar button {
+            padding: 10px;
+            border: none;
+            background-color: #ccc;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .product-list {
+            display: grid; /* Используем сетку */
+            grid-template-columns: repeat(2, 1fr); /* Два столбца */
+            gap: 10px; /* Промежуток между карточками */
+            padding: 20px;
+            overflow-y: auto; /* Позволяет прокручивать список продуктов */
+            flex-grow: 1; /* Позволяет списку занимать оставшееся пространство */
+        }
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .product-card .product-name {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        .product-card .product-price {
+            font-size: 16px;
+            color: #007bff;
+            margin: 10px 0;
+        }
+        .product-card .message-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        /* Стилизация полосы прокрутки для WebKit браузеров (Chrome, Safari) */
+        .product-list::-webkit-scrollbar {
+            width: 8px; /* Ширина полосы прокрутки */
+        }
+        .product-list::-webkit-scrollbar-track {
+            background: #f1f1f1; /* Цвет фона полосы прокрутки */
+            border-radius: 10px; /* Закругление углов фона */
+        }
+        .product-list::-webkit-scrollbar-thumb {
+            background: #888; /* Цвет ползунка */
+            border-radius: 10px; /* Закругление углов ползунка */
+        }
+        .product-list::-webkit-scrollbar-thumb:hover {
+            background: #555; /* Цвет ползунка при наведении */
+        }
+
+        /* Стилизация полосы прокрутки для Firefox */
+        .product-list {
+            scrollbar-width: thin; /* Установка ширины полосы прокрутки */
+            scrollbar-color: #888 #f1f1f1; /* Цвет ползунка и фона */
+        }
+        .dropdown-content {
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="phone-frame"> <!-- Добавлена рамка смартфона -->
+        <div class="header">
+            <i class="fas fa-bars menu-icon" onclick="toggleDropdown()"></i>
+            <div>
+                <a href="index.html" class="sign-in">Sign in</a>
+                <i class="fas fa-user user-icon"></i>
+            </div>
+        </div>
+        <div id="dropdown" class="dropdown-content" style="display: none;">
+            <a href="#" onclick="filterByCategory('Phones')">Phones</a>
+            <a href="#" onclick="filterByCategory('Laptops')">Laptops</a>
+            <a href="#">Tablets</a>
+            <a href="#">Computers</a>
+            <a href="#">Appliances</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="filterProducts()">
+            <button onclick="filterProducts()"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="product-list" id="productList">
+            <div class="product-card" data-category="Laptops">
+                <a href="product.html" >
+                    <img alt="Chuwi GemiBook как новый" height="150" src="https://storage.googleapis.com/a1aa/image/tByeQgLXq6TWKqotIlyBLqqtNQyVTh7XwyJ3OKxnrWalkXfTA.jpg" width="200"/>
+                    <div class="product-name">Chuwi GemiBook как новый</div>
+                    <div class="product-price">16 400 руб</div>
+                </a>
+                <button class="message-button">Message</button>
+            </div>
+            <div class="product-card" data-category="Laptops">
+             
+                    <img alt="Ноутбук Lenovo V15 G2 IJL черный" height="150" src="https://storage.googleapis.com/a1aa/image/6mZBKQ6dDZI3BdxfqykWF77HLePzu6euE3blLn0jMGKYSe6PB.jpg" width="200"/>
+                    <div class="product-name">Ноутбук Lenovo V15 G2 IJL черный</div>
+                    <div class="product-price">31 999 руб</div>
+             
+                <button class="message-button">Message</button>
+            </div>
+            <div class="product-card" data-category="Phones">
+              
+                    <img alt="Samsung Galaxy A55" height="150" src="https://storage.googleapis.com/a1aa/image/5k5nYrRLSS5WDZytqD5X3Mt5Hh6oZh8zbluYPQqefZXIJvenA.jpg" width="200"/>
+                    <div class="product-name">Samsung Galaxy A55</div>
+                    <div class="product-price">30 000 руб</div>
+           
+                <button class="message-button">Message</button>
+            </div>
+            <div class="product-card" data-category="Phones">
+                
+                    <img alt="Samsung Galaxy A55" height="150" src="https://storage.googleapis.com/a1aa/image/5k5nYrRLSS5WDZytqD5X3Mt5Hh6oZh8zbluYPQqefZXIJvenA.jpg" width="200"/>
+                    <div class="product-name">Samsung Galaxy A55</div>
+                    <div class="product-price">30 000 руб</div>
+               
+                <button class="message-button">Message</button>
+            </div>
+        </div>
+        <script>
+            // Функция для переключения видимости выпадающего списка категорий
+            function toggleDropdown() {
+                const dropdown = document.getElementById('dropdown');
+                dropdown.style.display = dropdown.style.display === 'none' || dropdown.style.display === '' ? 'block' : 'none';
+            }
+        
+            // Функция для фильтрации продуктов по категории
+            function filterByCategory(category) {
+                const input = document.getElementById('searchInput');
+                input.value = ''; // Очищаем поле поиска
+                const productList = document.getElementById('productList');
+                const products = productList.getElementsByClassName('product-card');
+        
+                // Перебираем все карточки продуктов
+                for (let i = 0; i < products.length; i++) {
+                    const productCategory = products[i].getAttribute('data-category');
+                    if (productCategory === category) {
+                        products[i].style.display = ""; // Показываем карточку
+                    } else {
+                        products[i].style.display = "none"; // Скрываем карточку
+                    }
+                }
+            }
+        
+            // Функция для фильтрации продуктов по тексту в поле поиска
+            function filterProducts() {
+                const input = document.getElementById('searchInput');
+                const filter = input.value.toLowerCase(); // Приводим к нижнему регистру
+                const productList = document.getElementById('productList');
+                const products = productList.getElementsByClassName('product-card');
+        
+                // Перебираем все карточки продуктов
+                for (let i = 0; i < products.length; i++) {
+                    const productName = products[i].getElementsByClassName('product-name')[0];
+                    if (productName) {
+                        const txtValue = productName.textContent || productName.innerText;
+                        // Сравниваем текст с введенным значением
+                        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                            products[i].style.display = ""; // Показываем карточку
+                        } else {
+                            products[i].style.display = "none"; // Скрываем карточку
+                        }
+                    }
+                }
+            }
+        
+            // Закрытие выпадающего списка при клике вне его
+            window.onclick = function(event) {
+                if (!event.target.matches('.menu-icon')) {
+                    const dropdown = document.getElementById('dropdown');
+                    if (dropdown.style.display === 'block') {
+                        dropdown.style.display = 'none';
+                    }
+                }
+            }
+        </script>
+</body>
+</html>

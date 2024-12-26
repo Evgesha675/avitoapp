@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Product Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Центрирование по вертикали */
+        }
+        .phone-frame {
+    position: relative; /* Устанавливаем относительное позиционирование для рамки */
+    width: 375px; /* Ширина смартфона */
+    height: 800px; /* Высота смартфона */
+    border: 16px solid #000; /* Рамка смартфона */
+    border-radius: 36px; /* Закругление углов */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Тень */
+    overflow: hidden; /* Скрыть переполнение */
+    display: flex; /* Центрирование содержимого */
+    flex-direction: column; /* Вертикальное расположение элементов */
+    padding: 20px; /* Отступы внутри рамки */
+}
+
+        .container {
+            max-width: 400px;
+            margin: 0; /* Убираем отступы */
+            padding: 20px;
+            padding-bottom: 40px; /* Добавляем дополнительный отступ снизу */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 100%; /* Занимаем всю высоту рамки */
+            overflow-y: auto; /* Позволяет прокручивать содержимое */
+            border-radius: 10px; /* Закругление углов контейнера */
+        }
+        .back-button {
+            font-size: 24px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .product-image {
+            text-align: center;
+        }
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .product-price {
+            color: #007bff;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .product-description {
+            font-size: 14px;
+            color: #6c757d;
+            margin: 10px 0;
+        }
+        .location, .seller-info {
+            display: flex;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding : 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .location i, .seller-info i {
+            margin-right: 10px;
+            color: #007bff;
+        }
+        .location span, .seller-info span {
+            font-size: 14px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .buttons button {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="phone-frame"> <!-- Рамка смартфона -->
+        <div class="container">
+            <div class="back-button" onclick="window.history.back();">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="product-image">
+                <img alt="Image of a Chuwi GemiBook laptop" height="300" src="https://storage.googleapis.com/a1aa/image/S7LS22kuRVLhMxMET0w1bKXLGfekAOlqGhcLS7fDeHkGDe1fE.jpg" width="400"/>
+            </div>
+            <div class="product-title">Chuwi GemiBook как новый</div>
+            <div class="product-price">16 400 руб</div>
+            <div class="product-description">
+                GemiBook XPro имеет яркий дисплей, обеспечивающий потрясающую точность цветопередачи и детализацию изображения, а также помогающий снизить напряжение глаз при длительной работе. Тонкий и прочный корпус весит всего 1460 г при толщине 19 мм и обладает превосходной термопрочностью и ударопрочностью. Увеличенный тачпад расширяет границы управления и делает работу простой и эффективной без использования мыши.
+            </div>
+            <div class="location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Irkutskaya oblast', Irkutsk</span>
+            </div>
+            <div class="seller-info">
+                <i class="fas fa-user"></i>
+                <span>Name: Ivan</span>
+            </div>
+            <div class="buttons">
+                <a href="chat.html" style="text-decoration: none; flex: 1;">
+                <button>Message</button>
+            </a>
+                <button>Phone</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

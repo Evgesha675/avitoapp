@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="phone-frame"> <!-- Добавлена рамка смартфона -->
+        <div class="container">
+            <div class="back-arrow">
+                <a href="index.html" style="text-decoration: none; color: #000;">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+            <h1>Sign in</h1>
+            <p>Welcome back</p>
+            <br>
+            <br><br><br><br><br>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email address">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Password">
+                <i class="fas fa-eye" id="togglePassword" style="cursor: pointer;"></i>
+            </div>
+            <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
+            <button class="submit-btn" onclick="location.href='product-listing.html';">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+            <div class="new-member">
+                New here? <a href="sign-up.html">Create an account</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Скрипт для переключения видимости пароля на странице входа
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>

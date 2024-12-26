@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Chat Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa; /* Фон страницы */
+        }
+        .phone-frame {
+            position: relative; /* Устанавливаем относительное позиционирование для рамки */
+            width: 375px; /* Ширина смартфона */
+            height: 667px; /* Высота смартфона */
+            border: 16px solid #000; /* Рамка смартфона */
+            border-radius: 36px; /* Закругление углов */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Тень */
+            overflow: hidden; /* Скрыть переполнение */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Занимаем всю высоту рамки */
+        }
+        .header {
+            background-color: #4285F4;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+        .header i {
+            font-size: 24px;
+            margin: 0 10px;
+            cursor: pointer; /* Указатель для кликабельных элементов */
+        }
+        .header .title {
+            flex-grow: 1;
+            text-align: center;
+        }
+        .header .title h1 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .header .title p {
+            margin: 0;
+            font-size: 12px;
+        }
+        .content {
+            flex-grow: 1;
+            background-color: white;
+            padding: 10px;
+            overflow-y: auto; /* Позволяет прокручивать содержимое */
+        }
+        .footer {
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+        .footer input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-frame"> <!-- Рамка смартфона -->
+        <div class="container">
+            <div class="header">
+                <i class="fas fa-arrow-left" onclick="window.history.back();"></i>
+                <i class="fas fa-user-circle"></i>
+                <div class="title">
+                    <h1>Ivan</h1>
+                    <p>Chuwi GemiBook как новый</p>
+                </div>
+                <i class="fas fa-phone"></i>
+            </div>
+            <div class="content">
+                <!-- Chat content goes here -->
+                <p>Chat messages will appear here...</p>
+            </div>
+            <div class="footer">
+                <input type="text" placeholder="Type your message here...">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
